@@ -1,0 +1,11 @@
+{
+  "title": "ACME json schema",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "required": ["employee_id"]
+}
