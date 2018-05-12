@@ -2,18 +2,30 @@
 
 Response to a coding challenge
 
-1. Prepare runtime environment
-	Step 1: Move contents to ~/eligibility_test
-        Step 2: Directory structure should look like ~/eligibility_test/src, ~/eligibility_test/test/ etc.
-        Step 3: pip install jsonschema
-        Step 4: pip install flask
+## Installation
 
-2. Starting the service
-	Step 1: export FLASK_APP=~/eligibility_test/src/eligibility_service.py
-        Step 2: python3 -m flask run
+### Prepare a virtual environment
 
-3. Command line examples
+	pyvenv venv
+	source venv/bin/activate
 
+### Install for production use
+
+	python setup.py install
+
+### Install for development
+
+	python setup.py develop
+	pip install -e .
+
+
+## Start the service
+
+	export FLASK_APP=~/eligibility_test/src/eligibility_service.py
+    python3 -m flask run
+
+
+## Command line examples
 
 EXAMPLE 1 : ping 
 
@@ -76,10 +88,11 @@ EXAMPLE 7 : Unsupported URL on the server
     <p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
 
 
-4. Next Steps
-	1. Containerize the whole application so that all the dependencies would be in one place
-	2. Add a database backend if needed
-	3. Better error handling and checks
-	4. More test cases
-	5. Incorporate Swagger to generate server stubs
-	6. Add a deploy script
+## Next Steps
+
+1. Containerize the whole application so that all the dependencies would be in one place
+1. Add a database backend if needed
+1. Better error handling and checks
+1. More test cases
+1. Incorporate Swagger to generate server stubs
+1. Add a deploy script
