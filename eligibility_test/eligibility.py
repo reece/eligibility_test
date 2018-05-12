@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
-import sys
-sys.path.insert(0, '~/eligibility_test')
+
 
 class EligibilityBase(ABC):
     @abstractmethod

@@ -1,13 +1,11 @@
 import json
 import jsonschema
-import sys
 import csv
 import os
+
+from eligibility_test.eligibility import EligibilityBase
+
 HOME_DIR = os.path.expanduser('~')
-
-sys.path.insert(0, HOME_DIR)
-from eligibility_test.src.eligibility import EligibilityBase
-
 SCHEMA_PATH = HOME_DIR + '/eligibility_test/json_schema/schema.json'
 
 class AcmeEligibility(EligibilityBase):

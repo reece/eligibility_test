@@ -1,11 +1,11 @@
 import os, sys
 from flask import Flask, request, current_app, Response
-HOME_DIR = os.path.expanduser('~')
-sys.path.insert(0, HOME_DIR)
-from eligibility_test.src.acme_eligibility import AcmeEligibility
+
+from eligibility_test.acme_eligibility import AcmeEligibility
 
 app = Flask(__name__)
 
+HOME_DIR = os.path.expanduser('~')
 acme_obj = AcmeEligibility(HOME_DIR + '/eligibility_test/data/employees.tsv')
 
 @app.route("/v1/ping", methods=["GET"])
