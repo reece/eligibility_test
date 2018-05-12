@@ -19,10 +19,24 @@ Response to a coding challenge
 	pip install -e .
 
 
+## Packaging
+
+To package the application, type:
+
+	python setup.py bdist
+
+For kicks, you can easily inspect what's included in that package:
+
+	tar -tzf dist/Eligibility*.tar.gz
+
+(In practice, it's much better to do this as part of a CI/CD system
+and to use the wheel format.  For example, see
+https://travis-ci.org/biocommons/biocommons.seqrepo)
+
+
 ## Start the service
 
-	export FLASK_APP=~/eligibility_test/src/eligibility_service.py
-    python3 -m flask run
+	FLASK_APP=eligibility_test/eligibility_service.py python3 -m flask run -m flask run
 
 
 ## Command line examples

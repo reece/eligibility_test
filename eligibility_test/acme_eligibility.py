@@ -1,16 +1,15 @@
-import json
-import jsonschema
 import csv
-import os
+import json
+import pkg_resources
+
+import jsonschema
 
 from eligibility_test.eligibility import EligibilityBase
 
-HOME_DIR = os.path.expanduser('~')
-SCHEMA_PATH = HOME_DIR + '/eligibility_test/json_schema/schema.json'
 
 class AcmeEligibility(EligibilityBase):
     def __init__(self, file_path):
-        with open(SCHEMA_PATH, 'r') as f:
+        with pkg_resources.resource_stream(__name__, "_data/schema.json") as f:
             schema_data = f.read()
         self.schema = json.loads(schema_data)
 
